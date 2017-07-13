@@ -1,5 +1,7 @@
+require './lib/sendsms.rb'
+
 class Takeaway
-  #@meals={ "curry" => 15,"chips" => 12,"eggs" => 25 }
+  
   def initialize()
     @meals={ "curry" => 15,"chips" => 12,"eggs" => 25 }
   end
@@ -45,10 +47,15 @@ class Takeaway
       item_price=price[item_numbers[i].to_i-1]
       #puts "item number is.. #{item_numbers[i]} and quantity is #{numbers_of[i]} total cost is #{item_numbers[i].to_i * numbers_of[i].to_i}"
       puts "item  #{i+1} is #{item_name}\t cost per dish £#{item_price}  ordered #{numbers_of[i]}  items at a cost of  £#{numbers_of[i].to_i * item_price.to_i}"
-      sum+=(numbers_of[i].to_i*item_price)
+      sum+=(numbers_of[i].to_i*item_price.to_i)
     end
     puts "                                                             Total cost is £#{sum}"
+    send_message(0167324445,"Hey Chrissy your meal will be with you in 10 mins")
     return sum
+  end
+
+  def send_message(phone_number,message)
+    Sendsms.new.send(phone_number,message)
   end
 
 end
