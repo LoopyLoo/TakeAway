@@ -2,24 +2,22 @@ require 'takeaway'
 
 describe 'testing akeaway' do 
 	context 'takeaway functions' do
-		tk=Takeaway.new
+		tk=Takeaway.new()
 		it 'checks lists items from menu' do
-			#tk=Takeaway.new
-			
-			expect(tk.show_items).to eq ["curry", "chips", "eggs"]	
+			#tk=Takeaway.new		
+			expect(tk.print_item_list).to eq ["curry", "chips", "eggs"]	
 		end
-
-		it 'takes input from the user' do
-			expect(tk.enter_choice).to eq 'curry => 5, chips=>7'
-		end
-
 		it 'takes in values and adds them to the hash' do
-
-			expect(tk.enter_choice).to eq 3
+			expect(tk.add_to_list).to eq 'input 3 meals size 3'
 		end
 
-		it 'lists choices' do 
-			expect(tk.list_choices).to eq 5
+		it 'checks total is what it should be' do 
+			item_number=[1]
+			number_of=[2]
+			expect(tk.show_order(item_number,number_of)).to eq 30
+		end
+
+		it 'prints out choices and totals from selections' do 
 		end
 
 	end
