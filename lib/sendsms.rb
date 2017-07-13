@@ -19,4 +19,5 @@ friends.each do |key, value|
     :body => "Hey #{value}, Your order will be with you in 10 mins"
   )
   puts "Sent message to #{value}"
+  
 end
