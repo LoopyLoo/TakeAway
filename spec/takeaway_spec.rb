@@ -6,8 +6,7 @@ describe 'testing akeaway' do
 		it 'checks lists items from menu' do
 			#tk=Takeaway.new
 			
-			expect(tk.show_items).to eq ["curry", "chips", "eggs"]
-			
+			expect(tk.show_items).to eq ["curry", "chips", "eggs"]	
 		end
 
 		it 'takes input from the user' do

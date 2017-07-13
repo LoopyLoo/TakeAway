@@ -4,7 +4,6 @@
   	#@meals={ "curry" => 15,"chips" => 12,"eggs" => 25 }
 
 	meals={ "curry" => 15,"chips" => 12,"sausages and beans" => 25 }
-
   end
 
   def print_out 

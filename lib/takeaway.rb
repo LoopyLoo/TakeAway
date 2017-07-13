@@ -12,7 +12,6 @@ class Takeaway
   end
 
   def enter_choice
-
   	
   	begin  
   	'please enter '
